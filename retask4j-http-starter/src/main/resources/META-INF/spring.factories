@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+fun.commons.retask4j.http.config.RedissonAutoConfiguration,\
+fun.commons.retask4j.http.caller.FuHttpTaskCallerAutoConfiguration,\
+fun.commons.retask4j.http.worker.FuHttpTaskWorkerAutoConfiguration

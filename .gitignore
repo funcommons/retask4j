@@ -1,0 +1,44 @@
+# Build outputs
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+.m2/
+
+# Node / Frontend
+node_modules/
+dist/
+.npm/
+.eslintcache
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+~/
+
+# Java
+*.log
+hs_err_pid*.log
+replay_pid*.log
+
+# Generated files
+auto-imports.d.ts
+components.d.ts
+
+# Personal config
+*.iml

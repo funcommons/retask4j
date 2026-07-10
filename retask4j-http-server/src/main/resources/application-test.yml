@@ -1,0 +1,86 @@
+server:
+  port: 9093
+  tomcat:
+    max-threads: 5000
+    max-connections: 20000
+    accept-count: 2000
+    min-spare-threads: 2000
+    connection-timeout: 60000
+    max-http-header-size: 655360
+    max-http-post-size: -1
+    uri-encoding: UTF-8
+
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: retask4j-http-server
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration,com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure,org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+  mvc:
+    static-path-pattern: /**
+    resources:
+      static-locations: classpath:/META-INF/resources/static
+
+
+
+logging:
+  config: classpath:log4j2.xml
+
+retask4j:
+  http:
+    redis:
+      redisson:
+        singleServerConfig:
+          address: "redis://localhost:6379"
+          database: 0
+          idleConnectionTimeout: 10000
+          connectTimeout: 10000
+          timeout: 60000
+          retryAttempts: 3
+          retryInterval: 1500
+          subscriptionsPerConnection: 5
+          subscriptionConnectionMinimumIdleSize: 1
+          subscriptionConnectionPoolSize: 50
+          connectionMinimumIdleSize: 8
+          connectionPoolSize: 16
+          dnsMonitoringInterval: 5000
+        threads: 0
+        nettyThreads: 0
+
+    callers:
+      -
+      - topic: "http_proxy"
+        path: "/proxy/push"
+        mode: "NORMAL"
+
+      - topic: "demo"
+        path: "/demo/call"
+        mode: "FUNCTION"
+
+      - topic: "demo"
+        path: "/demo/task"
+        mode: "CALLBACK"
+        callback-url: "http://localhost:9093/debug/request.info"
+
+
+    workers:
+      - topic: "demo"
+        routes:
+          - path: "http://t7\\.baidu\\.com/(.+)"
+            redirect: "https://t7.baidu.com/&1"
+            rewrite-request-headers:
+              "my-token": Null
+            assert-response:
+              #为空不限,如：[200,301,302,304,403,404]
+              status-in: []
+            rewrite-response-headers:
+              "access-control-allow-origin": "*"
+              "timing-allow-origin": "*"
+              "my-token": "123"
+              "etag": null

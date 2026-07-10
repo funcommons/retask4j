@@ -1,0 +1,137 @@
+@use './brands/mchuan';
+@use './themes';
+
+:root {
+  --app-header-height: 56px;
+  --app-header-padding: 0 16px;
+  --app-header-gap: 16px;
+  --app-header-bg: var(--app-bg);
+  --app-header-border-color: var(--app-border-extra-light);
+  --app-header-shadow: none;
+
+  --app-main-bg: var(--app-bg-page);
+  --app-main-padding-x: 16px;
+  --app-main-padding-y: 16px;
+  --app-main-block-gap: 16px;
+
+  --app-section-bg: var(--app-bg);
+  --app-section-border-color: var(--app-border);
+  --app-section-radius: 8px;
+  --app-section-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --app-section-title-color: var(--app-text);
+  --app-section-desc-color: var(--app-text-secondary);
+
+  --app-block-pad: 4px;
+  --app-block-mb: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 13px;
+  color: var(--app-text);
+  background: var(--app-bg-page);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --app-block-pad: 8px;
+    --app-block-mb: 8px;
+    --app-main-padding-x: 8px;
+    --app-main-padding-y: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --app-block-pad: 16px;
+    --app-block-mb: 16px;
+    --app-main-padding-x: 16px;
+    --app-main-padding-y: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--app-bg-page);
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--app-header-height);
+  padding: var(--app-header-padding);
+  display: flex;
+  align-items: center;
+  background: var(--app-header-bg);
+  border-bottom: 1px solid var(--app-header-border-color);
+  box-shadow: var(--app-header-shadow);
+  gap: var(--app-header-gap);
+}
+
+.app-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--brand-font-size-header);
+  font-weight: 600;
+  color: var(--app-text);
+}
+
+.app-header__spacer {
+  flex: 1;
+}
+
+.app-main {
+  padding: var(--app-main-padding-y) var(--app-main-padding-x);
+  background: var(--app-main-bg);
+  min-height: calc(100vh - var(--app-header-height));
+}
+
+.app-section {
+  background: var(--app-section-bg);
+  border: 1px solid var(--app-section-border-color);
+  border-radius: var(--app-section-radius);
+  box-shadow: var(--app-section-shadow);
+  padding: var(--app-block-pad);
+  margin-bottom: var(--app-block-mb);
+}
+
+.app-section__title {
+  font-size: var(--brand-font-size-large);
+  font-weight: 600;
+  color: var(--app-section-title-color);
+  margin-bottom: 12px;
+}
+
+.app-section__desc {
+  font-size: var(--brand-font-size-base);
+  color: var(--app-section-desc-color);
+  margin-bottom: 12px;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metric-card {
+  background: var(--app-bg);
+  border: 1px solid var(--app-border-extra-light);
+  border-radius: var(--brand-radius-card);
+  padding: 16px;
+}
+
+.metric-card__label {
+  font-size: var(--brand-font-size-base);
+  color: var(--app-text-secondary);
+  margin-bottom: 4px;
+}
+
+.metric-card__value {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--brand-primary);
+}

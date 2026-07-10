@@ -1,0 +1,29 @@
+html[data-theme='light'] {
+  --app-bg: #ffffff;
+  --app-bg-page: #f0f2f5;
+  --app-text: #1f1f1f;
+  --app-text-secondary: #5e5e5e;
+  --app-border: #dcdfe6;
+  --app-border-light: color-mix(in srgb, var(--app-border) 70%, transparent);
+  --app-border-lighter: color-mix(in srgb, var(--app-border) 40%, transparent);
+  --app-border-extra-light: color-mix(in srgb, var(--app-border) 15%, transparent);
+}
+
+html[data-theme='dark'] {
+  --app-bg: #1a1a1a;
+  --app-bg-page: #141414;
+  --app-text: #e8e8e8;
+  --app-text-secondary: #b0b0b0;
+  --app-border: #3a3a3a;
+  --app-mask: rgba(0, 0, 0, 0.7);
+}
+
+html[data-theme='orange-black'] {
+  --app-bg: #0e0e0e;
+  --app-bg-page: #050505;
+  --app-text: #f5f5f5;
+  --app-text-secondary: #c0c0c0;
+  --app-border: #2a2a2a;
+  --app-primary: #ff7d00;
+  --brand-primary: #ff7d00;
+}

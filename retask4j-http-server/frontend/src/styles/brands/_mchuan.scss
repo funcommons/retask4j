@@ -1,0 +1,25 @@
+html[data-brand='mchuan'] {
+  --brand-primary: #2563eb;
+  --brand-primary-dark: #1d4ed8;
+  --brand-on-primary: #ffffff;
+  --brand-primary-gradient: linear-gradient(90deg, #2563eb 0%, #2563eb 90%, #a855f7 100%);
+
+  --brand-radius-card: 8px;
+  --brand-radius-input: 8px;
+  --brand-radius-button: 8px;
+  --brand-radius-chip: 4px;
+  --brand-radius-md: 6px;
+
+  --brand-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
+  --brand-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --brand-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --brand-shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --brand-font-size-base: 13px;
+  --brand-font-size-large: 15px;
+  --brand-font-size-header: 22px;
+
+  --brand-sidebar-bg: #ffffff;
+  --brand-sidebar-active-bg: #2563eb;
+  --brand-sidebar-active-text: #ffffff;
+}
