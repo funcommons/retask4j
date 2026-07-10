@@ -45,3 +45,6 @@ components.d.ts
 
 # Release artifacts (built locally; not committed)
 release/
+
+# GitHub Actions
+.github/.cache/

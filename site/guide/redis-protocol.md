@@ -1,4 +1,7 @@
-# Redis Protocol
+---
+title: REST API & Redis Protocol
+---
+
 
 retask4j uses Redis as its only state store. This document describes the exact Redis key
 format, value format, and Lua scripts that any client (Python, Go, Node.js, Ruby, etc.)
@@ -88,7 +91,7 @@ language's equivalent).
 
 For each item:
 - if `delayTime > 0`: ZADD `timing-key` score=executeTime+delayTime*1000
-- else: RPUSH `working-key` &lt;id&gt;; HSET `message-prefix&lt;id&gt;` <all fields from json>
+- else: RPUSH `working-key` &lt;id&gt;; HSET `message-prefix&lt;id&gt;` &lt;all fields from json&gt;
 
 ### 2. `get_task_messages_for_work.lua` — worker poll (claim next task)
 
@@ -128,7 +131,7 @@ For each item:
 **KEYS**: `[sorted-set-key, working-key]`
 **ARGV**: `[maxCount]`
 
-ZRANGEBYSCORE the sorted set (score <= now) and RPUSH the IDs back to working-key.
+ZRANGEBYSCORE the sorted set (score &lt;= now) and RPUSH the IDs back to working-key.
 Used by the `runResetTiming/Pending/Retry` background threads.
 
 ### 6. `get_task_messages_by_id.lua` — peek (no mutation)
