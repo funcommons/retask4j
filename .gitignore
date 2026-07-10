@@ -42,3 +42,6 @@ components.d.ts
 
 # Personal config
 *.iml
+
+# Release artifacts (built locally; not committed)
+release/
