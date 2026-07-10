@@ -87,6 +87,7 @@ retask4j-demo-taskworker  standalone worker demo
 | [Quickstart](documents/quickstart.md) | 5-minute getting-started |
 | [Core Concepts](documents/concepts.md) | Task modes, lifecycle, data model |
 | [HTTP Proxy Mode](documents/http-proxy.md) | Endpoint spec, request headers, response assertions |
+| [REST API & Redis Protocol](documents/redis-protocol.md) | HTTP gateway for non-Java clients + Redis protocol reference |
 | [Configuration](documents/configuration.md) | Full config reference with examples |
 | [API Reference](documents/api-reference.md) | Core API and debug interfaces |
 | [Best Practices](documents/best-practices.md) | Production deployment, tuning, FAQ |

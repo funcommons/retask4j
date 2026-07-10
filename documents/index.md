@@ -10,6 +10,7 @@ A Redis-based distributed asynchronous task queue framework.
 | [Quick Start](quickstart.md) | Environment requirements, installation, 5-minute tutorial |
 | [Core Concepts](concepts.md) | Task modes, lifecycle, data model |
 | [HTTP Proxy Mode](http-proxy.md) | API description, request headers, response assertions |
+| [REST API for Non-Java Clients](redis-protocol.md) | HTTP gateway endpoints + Redis protocol reference |
 | [Configuration Reference](configuration.md) | Complete configuration options and examples |
 | [API Reference](api-reference.md) | Core API and Debug endpoints |
 | [Best Practices](best-practices.md) | Production deployment, performance tuning, FAQ |
