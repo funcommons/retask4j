@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
+    "build": "vitepress build && node scripts/postbuild.mjs",
+    "preview": "vitepress preview",
+    "postbuild": "node scripts/postbuild.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.5.0",
